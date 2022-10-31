@@ -12,19 +12,18 @@ public class FileReader {
         for (int i = 0; i < data.length; i++) {
             switch (data[i]) {
                 case "Name:":
-                    profile.setName(data[++i]);
+                    profile.setName(data[i+1]);
                     break;
                 case "Age:":
-                    profile.setAge(Integer.parseInt(data[++i]));
+                    profile.setAge(Integer.parseInt(data[i+1]));
                     break;
                 case "Email:":
-                    profile.setEmail(data[++i]);
+                    profile.setEmail(data[i+1]);
                     break;
                 case "Phone:":
-                    profile.setPhone(Long.parseLong(data[++i]));
+                    profile.setPhone(Long.parseLong(data[i+1]));
                     break;
                 default:
-                    throw new IllegalArgumentException("This file cannot be used to read a Profile");
             }
         }
         return profile;
